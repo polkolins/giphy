@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+## Run the Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+All you need to do is ot run:
+#### `yarn install && yarn start`
 
-## Available Scripts
+The application is based on CRA so you can go with scripts from there:
 
-In the project directory, you can run:
+#### `yarn start` to run the application
+#### `yarn test` to run tests
 
-### `yarn start`
+Application will open automatically in browser window
+and will be working on http://localhost:3000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Notes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Time spent:
+1. About **2h** on thinking/drafting the app in head/on paper and getting familiar with Giphy API.
+2. About **6-8h** on coding.
+3. About **1h** on preparing this document and comments in code.
 
-### `yarn test`
+I leave the comments in code for everything that could be done better or is time-consuming, and I decided NOT to spent too much time on some solutions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Basically I do not know if **TDD, DDD** or something else here is expected, so I decided to keep simple structure of
+files/folders with **Components/API/Context** as I usually do for simple project. Yes, this solution is not such modular as
+DDD but still, whole project could be used as a dependency for other project.
 
-### `yarn build`
+Project is relatively small, so I decided to go with Context API instead of advanced state management.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### NOT implemented
+1. I thought it makes no sense to spent too much time on **beautiful scrollbars**, so there are **only native**.
+2. The same for *Data Storage* (**Redux** for example) and async *middleware* (**Redux-Saga**, **Redux-Thunk** ...).
+3. I leave a comment in code about **Error handling**.
+4. There are not any requirements about **RWD**, so it's implemented partially.
+5. There are not any **E2E** tests, only Unit tests and not for everything due to lack of time.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Performance
+1. **Endless scrolling** is implemented as pagination functionality.
+2. **Loading component** is added for fetching data (api calls and individual images).
+3. **Manual batching** for state updated is implemented in some places.
